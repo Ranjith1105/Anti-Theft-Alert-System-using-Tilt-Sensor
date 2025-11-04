@@ -9,6 +9,8 @@
 	Tilt sensor(SW200D)
 
 ## Circuit Diagram:
+<img width="882" height="431" alt="Screenshot 2025-11-04 185754" src="https://github.com/user-attachments/assets/38161302-409f-4e98-8961-ad9e2882d834" />
+
  
 ## Theory :
  The Arduino Uno is powered by the ATmega328P, an 8-bit microcontroller that runs at 16 MHz. It has 32 KB of flash memory, 2 KB of SRAM, and 1 KB of EEPROM. The board has 14 digital I/O pins (of which 6 can be used as PWM outputs) and 6 analog input pins. These pins allow the board to interface with various sensors, actuators, and other devices.The Arduino Uno can be powered via a USB connection or an external power supply. The board has a built-in voltage regulator to manage power from 7 to 12 volts.
@@ -47,14 +49,36 @@ Step 7: Save Your Work
 
 ## Code:
 
+int ledPin=13;
+int inPin=7;
+void setup()
+{
+ Serial.begin(9600);
+  pinMode(ledPin,OUTPUT);
+  pinMode(inPin,INPUT);
+}
+void loop()
+{
+  int val=digitalRead(inPin);
+  if(val==0)
+  {
+    digitalWrite(ledPin,HIGH);
+  }
+  else
+  {
+    digitalWrite(ledPin,LOW);
+  }
+}
 
 
 ## Output:
 
- 
+ <img width="791" height="382" alt="Screenshot 2025-11-04 185838" src="https://github.com/user-attachments/assets/9c35d1a6-2f7c-4886-a548-866cbaca779b" />
 
 
 ## Result:
+
+Thus measure the Tilt Sensor using SW200D with Arduino UNO Board/ESP-32 using Tinker CAD has been Verified Successfully.
 
 Result: Thus measure the Tilt Sensor using SW200D with Arduino UNO Board/ESP-32 using Tinker CAD has been Verified Successfully.
 
